@@ -1,0 +1,330 @@
+:root {
+  --bg-main: #f7f7f9;
+  --surface-card: #ffffff;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --text-light: #9ca3af;
+  
+  --border-card: #ececf1;
+  --border-input: #e5e7eb;
+  
+  --maroon-primary: #6b1020;
+  --maroon-hover: #520c18;
+  --maroon-light: #fdf2f4;
+  --maroon-border: #f5c2cb;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* App Header */
+.app-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.app-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.app-header h1::before {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 24px;
+  background-color: var(--maroon-primary);
+  border-radius: 2px;
+}
+
+.app-header .subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* Card Styling */
+.card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-card);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.03);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+  text-align: left;
+}
+
+.counter-badge {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--maroon-primary);
+  background-color: var(--maroon-light);
+  border: 1px solid var(--maroon-border);
+  padding: 5px 14px;
+  border-radius: 20px;
+}
+
+/* 3-Column Form Grid Layout & Label Alignment Fix */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* FIX: Left-align labels with inputs */
+  text-align: left;        /* FIX: Prevents center text inheritance */
+  gap: 8px;
+  width: 100%;
+}
+
+.form-group label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 14px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--text-main);
+  background: #ffffff;
+  border: 1px solid var(--border-input);
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.15s ease;
+}
+
+/* Custom styling for select dropdown to show down arrow */
+select.form-control {
+  appearance: auto;
+  -webkit-appearance: auto;
+  cursor: pointer;
+}
+
+.form-control::placeholder {
+  color: var(--text-light);
+}
+
+.form-control:focus {
+  border-color: var(--maroon-primary);
+  box-shadow: 0 0 0 3px rgba(107, 16, 32, 0.1);
+}
+
+.search-input {
+  margin-bottom: 20px;
+}
+
+/* Button Alignment */
+.btn-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 24px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--maroon-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--maroon-hover);
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: var(--text-main);
+  border: 1px solid var(--border-input);
+}
+
+.btn-secondary:hover {
+  background-color: #f9fafb;
+}
+
+/* Notification Banner */
+.message-banner {
+  padding: 12px 16px;
+  background-color: var(--maroon-light);
+  border: 1px solid var(--maroon-border);
+  color: var(--maroon-primary);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Table Styling & Rounding */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+thead tr {
+  background-color: #f8f8fa;
+  border-bottom: 1px solid var(--border-card);
+}
+
+th {
+  padding: 14px 18px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--border-card);
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+td {
+  padding: 16px 18px;
+  font-size: 14px;
+  color: var(--text-main);
+  vertical-align: middle;
+}
+
+td.font-mono {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Table Badges */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.badge-bsit {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.badge-bscs {
+  background-color: var(--maroon-light);
+  color: var(--maroon-primary);
+  border: 1px solid var(--maroon-border);
+}
+
+/* Action Buttons */
+.actions-cell {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-action-edit {
+  background: #ffffff;
+  color: #374151;
+  border: 1px solid var(--border-input);
+}
+
+.btn-action-edit:hover {
+  background: #111827;
+  color: #ffffff;
+  border-color: #111827;
+}
+
+.btn-action-delete {
+  background: #ffffff;
+  color: var(--maroon-primary);
+  border: 1px solid var(--maroon-border);
+}
+
+.btn-action-delete:hover {
+  background: var(--maroon-primary);
+  color: #ffffff;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 32px;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
